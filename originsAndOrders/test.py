@@ -1,4 +1,5 @@
-from test import *
+from solution import *
+from random import randint
 
 # Testing specific dates
 print answer(1,31,99) #01/31/99
@@ -13,7 +14,8 @@ yrs = range(1,100)
 # Test different combinations of dates from all month & year combinations
 for m in months:
     for y in yrs:
-        d = days[m]
+	# Test day randomly within range of (1 - maxDayForMonth)
+        d = randint(1,days[m])
         print "testing: ",(m,d,y)
         print answer(m,y,d)
         print answer(d,y,m)
